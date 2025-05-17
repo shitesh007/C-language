@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+bool isVowel(char c) {
+    c = tolower(c);  // Convert to lowercase for easy comparison
+    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+}
+
+int main() {
+    char str[100];
+    cout << "Enter a string: ";
+    cin.getline(str, 100);
+
+    char* ptr = str;
+    int vowelCount = 0;
+
+    while (*ptr != '\0') {  // Iterate until end of string
+        if (isVowel(*ptr)) {
+            vowelCount++;
+        }
+        ptr++;  // Move pointer to next character
+    }
+
+    cout << "Number of vowels: " << vowelCount << endl;
+
+    return 0;
+}
